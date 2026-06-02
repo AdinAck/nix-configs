@@ -40,6 +40,8 @@
         editor = import ./user/editor.nix;
         zed = import ./user/zed.nix;
 
+        browser = import ./user/browser.nix;
+
         packages = import ./user/packages.nix;
       };
 
