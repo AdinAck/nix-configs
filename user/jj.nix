@@ -44,6 +44,8 @@
     shellAliases = {
       jjst = "jj status";
       jjn = "jj new";
+      jje = "jj edit";
+      jjc = "jj commit";
       jja = "jj abandon";
       jjl = "jj log";
       jjd = "jj diff";
@@ -56,6 +58,7 @@
       jjbc = "jj bookmark create";
       jjbm = "jj bookmark move";
       jjbt = "jj bookmark track";
+      jjbs = "jj bookmark set";
     };
   };
 }
