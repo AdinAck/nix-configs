@@ -61,7 +61,7 @@
             home-manager.nixosModules.home-manager
             {
               networking.hostName = hostname;
-              system.stateVersion = "25.11";
+              system.stateVersion = "26.05";
 
               users.users = nixpkgs.lib.mapAttrs (user: _: {
                 isNormalUser = true;
@@ -75,7 +75,7 @@
                 sharedModules = [
                   {
                     programs.home-manager.enable = true;
-                    home.stateVersion = "25.11";
+                    home.stateVersion = "26.05";
                   }
                 ];
                 users = nixpkgs.lib.mapAttrs (user: aspects: {
