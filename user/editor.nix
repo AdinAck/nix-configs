@@ -1,9 +1,7 @@
 {
-  programs.zed-editor = {
-    enable = true;
-  };
+  programs.micro.enable = true;
 
   home.sessionVariables = {
-    EDITOR = "zeditor";
+    EDITOR = "micro";
   };
 }

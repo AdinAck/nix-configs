@@ -39,6 +39,23 @@
     };
   };
 
-  # `ui.diff-formatter` above invokes `difft`, so make difftastic available.
-  home.packages = [ pkgs.difftastic ];
+  home = {
+    packages = [ pkgs.difftastic ];
+    shellAliases = {
+      jjst = "jj status";
+      jjn = "jj new";
+      jja = "jj abandon";
+      jjl = "jj log";
+      jjd = "jj diff";
+      jjde = "jj describe";
+      jjsq = "jj squash";
+      jjgf = "jj git fetch";
+      jjgp = "jj git push";
+      jjrb = "jj rebase";
+      jjb = "jj bookmark";
+      jjbc = "jj bookmark create";
+      jjbm = "jj bookmark move";
+      jjbt = "jj bookmark track";
+    };
+  };
 }
