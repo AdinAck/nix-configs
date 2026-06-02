@@ -21,21 +21,26 @@
     }@inputs:
     {
       system-aspects = {
-	shell = import ./system/shell.nix;
+        shell = import ./system/shell.nix;
         gnome = import ./system/gnome.nix;
+        ssh = import ./system/ssh.nix;
+        mdns = import ./system/mdns.nix;
 
-	packages = import ./system/packages.nix;
+        packages = import ./system/packages.nix;
       };
 
       user-aspects = {
         shell = import ./user/shell.nix;
         prompt = import ./user/prompt.nix;
+        nerd-font = import ./user/nerd-font.nix;
+        gnome = import ./user/gnome.nix;
         git = import ./user/git.nix;
         gh = import ./user/gh.nix;
         jj = import ./user/jj.nix;
+        editor = import ./user/editor.nix;
         zed = import ./user/zed.nix;
 
-	packages = import ./user/packages.nix;
+        packages = import ./user/packages.nix;
       };
 
       lib.makeHost =
@@ -59,7 +64,7 @@
               users.users = nixpkgs.lib.mapAttrs (user: _: {
                 isNormalUser = true;
                 initialPassword = "1234";
-		extraGroups = [ "wheel"  ];
+                extraGroups = [ "wheel" ];
               }) user-aspects;
 
               home-manager = {
