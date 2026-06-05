@@ -41,5 +41,12 @@
         minimum_contrast = 25;
       };
     };
+    userKeymaps = [
+      {
+        unbind = {
+          ctrl-q = "zed::Quit";
+        };
+      }
+    ];
   };
 }

@@ -1,7 +1,25 @@
-{ lib, ... }:
+{ lib, pkgs, ... }:
 with lib.hm.gvariant;
 {
+  programs.gnome-shell = {
+    enable = true;
+    extensions = [
+      { package = pkgs.gnomeExtensions.blur-my-shell; }
+      { package = pkgs.gnomeExtensions.dash-to-dock; }
+    ];
+  };
+
   dconf.settings = {
+    # Q: what happens if these apps aren't installed?
+    "org/gnome/shell" = {
+      favorite-apps = [
+        "firefox.desktop"
+        "org.gnome.Console.desktop"
+        "dev.zed.Zed.desktop"
+        "org.gnome.Nautilus.desktop"
+      ];
+    };
+
     "org/gnome/Console" = {
       custom-font = "MesloLGLDZ Nerd Font Mono 10";
       theme = "night";
@@ -19,7 +37,11 @@ with lib.hm.gvariant;
 
     "org/gnome/desktop/interface" = {
       accent-color = "orange";
+      clock-format = "12h";
+      clock-show-seconds = false;
+      clock-show-weekday = true;
       color-scheme = "prefer-dark";
+      toolkit-accessibility = false;
     };
 
     "org/gnome/desktop/screensaver" = {
@@ -44,6 +66,73 @@ with lib.hm.gvariant;
 
     "org/gnome/settings-daemon/plugins/power" = {
       sleep-inactive-ac-type = "nothing";
+    };
+
+    "org/gnome/desktop/wm/preferences" = {
+      button-layout = "appmenu:minimize,close";
+    };
+
+    # extensions
+
+    "org/gnome/shell/extensions/blur-my-shell" = {
+      settings-version = 2;
+    };
+
+    "org/gnome/shell/extensions/blur-my-shell/appfolder" = {
+      brightness = 0.6;
+      sigma = 30;
+    };
+
+    "org/gnome/shell/extensions/blur-my-shell/applications" = {
+      blur = false;
+      pipeline = "pipeline_default";
+    };
+
+    "org/gnome/shell/extensions/blur-my-shell/coverflow-alt-tab" = {
+      pipeline = "pipeline_default";
+    };
+
+    "org/gnome/shell/extensions/blur-my-shell/dash-to-dock" = {
+      blur = true;
+      brightness = 0.6;
+      pipeline = "pipeline_default_rounded";
+      sigma = 30;
+      static-blur = true;
+      style-dash-to-dock = 0;
+    };
+
+    "org/gnome/shell/extensions/blur-my-shell/lockscreen" = {
+      pipeline = "pipeline_default";
+    };
+
+    "org/gnome/shell/extensions/blur-my-shell/overview" = {
+      pipeline = "pipeline_default";
+      style-components = 3;
+    };
+
+    "org/gnome/shell/extensions/blur-my-shell/panel" = {
+      brightness = 0.6;
+      corner-radius = 0;
+      pipeline = "pipeline_default";
+      sigma = 30;
+    };
+
+    "org/gnome/shell/extensions/blur-my-shell/screenshot" = {
+      pipeline = "pipeline_default";
+    };
+
+    "org/gnome/shell/extensions/blur-my-shell/window-list" = {
+      brightness = 0.6;
+      sigma = 30;
+    };
+
+    "org/gnome/shell/extensions/dash-to-dock" = {
+      background-opacity = 0.8;
+      dash-max-icon-size = 48;
+      dock-position = "BOTTOM";
+      extend-height = false;
+      height-fraction = 0.9;
+      rounded-blur-found = false;
     };
   };
 }
