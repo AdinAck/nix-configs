@@ -52,6 +52,20 @@ with lib.hm.gvariant;
       secondary-color = "#000000";
     };
 
+    "org/gnome/desktop/search-providers" = {
+      disabled = [ ];
+      sort-order = [
+        "org.gnome.Settings.desktop"
+        "org.gnome.Nautilus.desktop"
+        "org.gnome.Calculator.desktop"
+        "firefox.desktop"
+        "org.gnome.Calendar.desktop"
+        "org.gnome.Contacts.desktop"
+        "org.gnome.Characters.desktop"
+        "org.gnome.clocks.desktop"
+      ];
+    };
+
     "org/gnome/desktop/session" = {
       idle-delay = mkUint32 0;
     };
@@ -70,6 +84,11 @@ with lib.hm.gvariant;
 
     "org/gnome/desktop/wm/preferences" = {
       button-layout = "appmenu:minimize,close";
+    };
+
+    "org/gnome/nautilus/preferences" = {
+      default-folder-viewer = "list-view";
+      migrated-gtk-settings = true;
     };
 
     # extensions
