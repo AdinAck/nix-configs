@@ -25,6 +25,7 @@
         gnome = import ./system/gnome.nix;
         ssh = import ./system/ssh.nix;
         mdns = import ./system/mdns.nix;
+        docker = import ./system/docker.nix;
 
         packages = import ./system/packages.nix;
       };
