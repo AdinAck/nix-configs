@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   services = {
     xserver.enable = true;
@@ -14,4 +15,8 @@
   programs = {
     dconf.enable = true;
   };
+
+  environment.gnome.excludePackages = with pkgs; [
+    epiphany
+  ];
 }

@@ -25,6 +25,7 @@
         gnome = import ./system/gnome.nix;
         ssh = import ./system/ssh.nix;
         mdns = import ./system/mdns.nix;
+        docker = import ./system/docker.nix;
 
         packages = import ./system/packages.nix;
       };
@@ -39,6 +40,8 @@
         jj = import ./user/jj.nix;
         editor = import ./user/editor.nix;
         zed = import ./user/zed.nix;
+
+        browser = import ./user/browser.nix;
 
         packages = import ./user/packages.nix;
       };
@@ -59,7 +62,7 @@
             home-manager.nixosModules.home-manager
             {
               networking.hostName = hostname;
-              system.stateVersion = "25.11";
+              system.stateVersion = "26.05";
 
               users.users = nixpkgs.lib.mapAttrs (user: _: {
                 isNormalUser = true;
@@ -73,7 +76,7 @@
                 sharedModules = [
                   {
                     programs.home-manager.enable = true;
-                    home.stateVersion = "25.11";
+                    home.stateVersion = "26.05";
                   }
                 ];
                 users = nixpkgs.lib.mapAttrs (user: aspects: {

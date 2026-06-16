@@ -4,6 +4,7 @@
     ripgrep
     nil
     nixd
+    nh
     alejandra
   ];
 }
