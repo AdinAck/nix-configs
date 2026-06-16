@@ -43,6 +43,8 @@
 
         browser = import ./user/browser.nix;
 
+        embedded = import ./user/embedded.nix;
+
         packages = import ./user/packages.nix;
       };
 

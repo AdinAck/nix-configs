@@ -1,10 +1,15 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    ripgrep
+    # nix
     nil
     nixd
     nh
     alejandra
+
+    # rust
+    clang
+    rustup
+    just
   ];
 }
