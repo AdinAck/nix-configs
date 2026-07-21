@@ -13,7 +13,7 @@
         default-command = [
           "log"
           "-r"
-          "trunk()::"
+          "present(@) | ancestors(immutable_heads().., 2) | trunk()"
         ];
 
         diff-formatter = [
@@ -50,7 +50,7 @@
       jjc = "jj commit";
       jja = "jj abandon";
       jjl = "jj log";
-      jjd = "jj diff";
+      jjd = "jj diff '~glob:**/*.lock'";
       jjde = "jj describe";
       jjsq = "jj squash";
       jjgf = "jj git fetch";
