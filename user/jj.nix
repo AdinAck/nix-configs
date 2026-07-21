@@ -39,6 +39,8 @@
     };
   };
 
+  programs.jjui.enable = true;
+
   home = {
     packages = [ pkgs.difftastic ];
     shellAliases = {
