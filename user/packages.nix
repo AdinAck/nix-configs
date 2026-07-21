@@ -11,5 +11,11 @@
     clang
     rustup
     just
+
+    # networking
+    netscanner
+
+    # misc
+    bat
   ];
 }

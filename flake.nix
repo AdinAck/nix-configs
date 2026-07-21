@@ -21,6 +21,7 @@
     }@inputs:
     {
       system-aspects = {
+        nix = import ./system/nix.nix;
         shell = import ./system/shell.nix;
         gnome = import ./system/gnome.nix;
         ssh = import ./system/ssh.nix;
@@ -40,8 +41,11 @@
         jj = import ./user/jj.nix;
         editor = import ./user/editor.nix;
         zed = import ./user/zed.nix;
+        btop = import ./user/btop.nix;
+        gh-dash = import ./user/gh-dash.nix;
 
         browser = import ./user/browser.nix;
+        discord = import ./user/discord.nix;
 
         embedded = import ./user/embedded.nix;
 
