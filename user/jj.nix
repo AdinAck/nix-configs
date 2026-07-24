@@ -61,6 +61,7 @@
       jjbm = "jj bookmark move";
       jjbt = "jj bookmark track";
       jjbs = "jj bookmark set";
+      jjbl = "jj bookmark list";
     };
   };
 }
