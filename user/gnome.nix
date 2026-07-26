@@ -14,7 +14,7 @@ with lib.hm.gvariant;
     "org/gnome/shell" = {
       favorite-apps = [
         "firefox.desktop"
-        "org.gnome.Console.desktop"
+        "com.mitchellh.ghostty.desktop"
         "dev.zed.Zed.desktop"
         "org.gnome.Nautilus.desktop"
       ];

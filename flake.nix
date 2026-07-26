@@ -27,6 +27,7 @@
         ssh = import ./system/ssh.nix;
         mdns = import ./system/mdns.nix;
         docker = import ./system/docker.nix;
+        fingerprint = import ./system/fingerprint.nix;
 
         packages = import ./system/packages.nix;
       };
@@ -34,8 +35,10 @@
       user-aspects = {
         shell = import ./user/shell.nix;
         prompt = import ./user/prompt.nix;
+        terminal = import ./user/terminal.nix;
         nerd-font = import ./user/nerd-font.nix;
         gnome = import ./user/gnome.nix;
+        bat = import ./user/bat.nix;
         git = import ./user/git.nix;
         gh = import ./user/gh.nix;
         jj = import ./user/jj.nix;

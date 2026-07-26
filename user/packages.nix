@@ -14,8 +14,6 @@
 
     # networking
     netscanner
-
-    # misc
-    bat
   ];
+
 }

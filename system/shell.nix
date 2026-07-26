@@ -1,9 +1,12 @@
 { pkgs, ... }:
 {
-    programs.fish.enable = true;
-    users.defaultUserShell = pkgs.fish;
-    environment.shells = with pkgs; [
-        bashInteractive
-        fish
-    ];
+  programs.fish = {
+    enable = true;
+    interactiveShellInit = "set fish_greeting";
+  };
+  users.defaultUserShell = pkgs.fish;
+  environment.shells = with pkgs; [
+    bashInteractive
+    fish
+  ];
 }
