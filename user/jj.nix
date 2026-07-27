@@ -1,4 +1,7 @@
 { pkgs, ... }:
+let
+  default_revset = "ancestors((present(@) | immutable_heads().. | bookmarks()::), 2)";
+in
 {
   programs.jujutsu = {
     enable = true;
@@ -13,7 +16,7 @@
         default-command = [
           "log"
           "-r"
-          "present(@) | ancestors(immutable_heads().., 2) | trunk()"
+          default_revset
         ];
 
         diff-formatter = [
@@ -39,7 +42,15 @@
     };
   };
 
-  programs.jjui.enable = true;
+  programs.jjui = {
+    enable = true;
+
+    settings = {
+      revisions = {
+        revset = default_revset;
+      };
+    };
+  };
 
   home = {
     packages = [ pkgs.difftastic ];
