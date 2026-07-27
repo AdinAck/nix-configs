@@ -50,7 +50,7 @@
       jjc = "jj commit";
       jja = "jj abandon";
       jjl = "jj log";
-      jjd = "jj diff '~glob:**/*.lock'";
+      jjd = "jj diff";
       jjde = "jj describe";
       jjsq = "jj squash";
       jjgf = "jj git fetch";
@@ -61,6 +61,7 @@
       jjbm = "jj bookmark move";
       jjbt = "jj bookmark track";
       jjbs = "jj bookmark set";
+      jjbl = "jj bookmark list";
     };
   };
 }
