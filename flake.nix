@@ -47,6 +47,9 @@
         btop = import ./user/btop.nix;
         gh-dash = import ./user/gh-dash.nix;
 
+        remote-server = import ./user/remote-server.nix;
+        remote-client = import ./user/remote-client.nix;
+
         browser = import ./user/browser.nix;
         discord = import ./user/discord.nix;
 
