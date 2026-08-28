@@ -1,7 +1,10 @@
 {
   programs.zed-editor = {
     enable = true;
-    extensions = [ "graphene" ];
+    extensions = [
+      "graphene"
+
+    ];
     userSettings = {
       ui_font_size = 16;
       buffer_font_size = 12;

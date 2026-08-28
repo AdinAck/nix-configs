@@ -1,12 +1,13 @@
-{ pkgs, config, ... }:
+{ pkgs, ... }:
 {
   programs.firefox = {
     enable = true;
-    profiles.default = {
-      id = 0;
-      path = config.home.username;
-      settings = {
-        "browser.gnome-search-provider.enabled" = true;
+    policies = {
+      Preferences = {
+        "browser.gnome-search-provider.enabled" = {
+          Value = true;
+          Status = "default";
+        };
       };
     };
   };
