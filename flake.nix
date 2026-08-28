@@ -48,6 +48,9 @@
         gh-dash = import ./user/gh-dash.nix;
         fetch = import ./user/fetch.nix;
 
+        remote-server = import ./user/remote-server.nix;
+        remote-client = import ./user/remote-client.nix;
+
         browser = import ./user/browser.nix;
         discord = import ./user/discord.nix;
 
