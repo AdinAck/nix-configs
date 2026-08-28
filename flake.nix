@@ -29,6 +29,8 @@
         docker = import ./system/docker.nix;
         fingerprint = import ./system/fingerprint.nix;
 
+        remote-server = import ./system/remote-server.nix;
+
         packages = import ./system/packages.nix;
       };
 
@@ -48,7 +50,6 @@
         gh-dash = import ./user/gh-dash.nix;
         fetch = import ./user/fetch.nix;
 
-        remote-server = import ./user/remote-server.nix;
         remote-client = import ./user/remote-client.nix;
 
         browser = import ./user/browser.nix;
