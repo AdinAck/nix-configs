@@ -8,9 +8,11 @@
     alejandra
 
     # rust
+    lldb
     clang
     rustup
     just
+    cargo-expand
 
     # networking
     netscanner
